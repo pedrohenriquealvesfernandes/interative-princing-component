@@ -1,39 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
   <title>Frontend Mentor | Interactive pricing component</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  Simple, traffic-based pricing
-  Sign-up for our 30-day trial. No credit card required. 
-
-  Pageviews
-  $ /month
-
-  Monthly Billing
-  Yearly Billing 25% discount
-
-  Unlimited websites
-  100% data ownership
-  Email reports
-
-  Start my trial
+  <main>
+    <section class="titulos">
+      <h1>Simple, traffic-based pricing</h1>
+      <div class="subtitulo">
+        <p>Sign-up for our 30-day trial.</p> 
+        <p>No credit card required.</p>
+      </div>
+    </section>
+    <section class="principal">
+      <div class="dados">
+          <p id="number-page">100K PAGEVIEWS</p>
+          <p><span id="payment">$16.00</span>/ month</p> 
+          <input type="range" name="page-range" id="page-range" value="50" max="100">  
+      </div>
+      <div class="informacoes">
+        <p>Monthly Billing</p>
+        <div class="inprange">
+          <input type="checkbox" id="checkboxinp">
+          <span class="box-check">
+            <span></span>
+          </span> 
+        </div>
+        <p>Yearly Billing <span id="discount-mobile">-25%</span> <span id="discount-desktop">25% discount</span></p>
+      </div>
+      <div class="separador"></div>
+      <div class="adicionais">
+        <ul>
+          <li><img src="images/icon-check.svg" alt="check"> Unlimited websites</li>
+          <li><img src="images/icon-check.svg" alt="check"> 100% data ownership</li>
+          <li><img src="images/icon-check.svg" alt="check"> Email reports</li>
+        </ul>
+        <button>Start my trial</button>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="attribution">
+      Challenge by
+      <a
+        href="https://www.frontendmentor.io?ref=challenge"
+        target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a href="https://github.com/pedrohenriquealvesfernandes"
+        >Pedro Alves</a
+      >.
+    </div>
+  </footer>
   
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
 </body>
+<script src="js/script.js"></script>
 </html>

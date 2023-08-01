@@ -1,0 +1,247 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap');
+
+:root{
+    --ciano-claro-slidebar: hsl(174, 77%, 80%);
+    --ciano-escuro-sliderbg: hsl(174, 86%, 45%);
+    --red-discount: hsl(14, 92%, 95%);
+    --red-discount-text: hsl(15, 100%, 70%);
+    --blue-cta-text: hsl(226, 100%, 87%);
+
+    --branco: hsl(0, 0%, 100%);
+    --blue-mainbg: hsl(230, 100%, 99%);
+    --azul-cinza-claro: hsl(224, 65%, 95%);
+    --azul-cinzado-texto: hsl(225, 20%, 60%);
+    --azul-desaturado-text-cta: hsl(227, 35%, 25%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: url("/images/bg-pattern.svg") no-repeat;
+    font-family: 'Manrope', sans-serif;
+    color: var(--azul-cinzado-texto)
+}
+
+.titulos{
+    padding: 5em 0;
+    text-align: center;
+    background: url("/images/pattern-circles.svg") no-repeat center;  
+}
+
+.titulos h1{
+    color: var(--azul-desaturado-text-cta);
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+.subtitulo p{
+    font-size: .9em;
+}
+
+.principal{
+    background-color: var(--branco);
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 10px;
+    padding: 2em;
+    text-align: center;
+}
+
+.dados{
+    display: flex;
+    flex-direction: column;
+}
+
+.dados p#number-page{
+    font-size: .8em;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.dados :nth-child(2){
+    order: 1;
+}
+
+.dados input[type="range"]{
+    width: 100%;
+    display: block;
+    appearance: none;
+    margin: 2.25em 0;
+    padding: 0  0 0 1.5em;
+    background: linear-gradient(to right,hsl(174, 77%, 80%) 50%, hsl(224, 65%, 95%) 50%);
+    border-radius: 5px;
+    height: 10px;
+}
+
+.dados input[type="range"]::-webkit-slider-thumb{
+    appearance: none;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    background:url("/images/icon-slider.svg") var(--ciano-escuro-sliderbg) no-repeat center;
+    box-shadow: 0px 5px 30px 2px var(--ciano-escuro-sliderbg);
+    cursor:  pointer;
+}
+
+.dados #payment{
+    font-size: 2em;
+    font-weight: bold;
+    color: var(--azul-desaturado-text-cta);
+}
+
+.informacoes{
+    display: flex;
+    font-size: .8em;
+    justify-content: space-between;
+    margin: 2.25em 0 ;
+}
+
+.informacoes .inprange{
+    position: relative;
+    width: 50px;
+}
+
+.informacoes .inprange > .box-check{
+    width: 100%;
+    height: 24px;
+    appearance: none;
+    display: block;
+    background-color: var(--blue-cta-text);
+    border-radius: 50px;
+    padding: 0 5px;
+    cursor: pointer;
+}
+
+.informacoes .inprange > .box-check:hover{
+    background-color: var(--ciano-claro-slidebar);
+}
+
+.informacoes .inprange > .box-check > span{
+    position: absolute;
+    background-color: var(--branco);
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    top: 4px;
+    left: 4px;
+    transition: all .2s ease-in-out;
+}
+
+input[type='checkbox']:checked + span.box-check > span{
+    transform: translateX(24px);
+}
+
+.informacoes input[type="checkbox"]{
+   display: none;
+}
+
+.informacoes input[type="range"]:hover{
+    background-color: var(--ciano-claro-slidebar);
+}
+
+.informacoes input[type="range"]::-webkit-slider-thumb{
+    appearance: none;
+    display: block;
+}
+
+.informacoes span{
+    padding: .35em;
+    color: var(--red-discount-text);
+    background-color: var(--red-discount);
+    border-radius: 50px;
+}
+
+.informacoes #discount-desktop{
+    display: none;
+}
+
+.separador{
+    width: 115%;
+    height: 1px;
+    background-color: var(--blue-cta-text);
+    margin: 0 0 1em -2em;
+    opacity: 0.3;
+}
+
+.adicionais ul{
+    list-style-type: none;
+}
+
+.adicionais li{
+    font-size: .8em;
+    padding: .25em;
+}
+
+.adicionais button{
+    height: 40px;
+    margin-top: 20px;
+    padding: 1em 3em;
+    border: none;
+    background-color: var(--azul-desaturado-text-cta);
+    color: var(--blue-cta-text);
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    font-size: 0.8em;
+}
+
+
+@media screen and (min-width:680px) {
+    .principal{
+        width: 500px;
+    }
+    
+    .dados{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .dados p{
+        width: 50%;
+    }
+
+    .dados :nth-child(2){
+        order: 0;
+        transform: scale(1.2);
+    }
+
+    .informacoes{
+        justify-content: space-around;
+        margin: 2.25em 4em;
+    }
+
+    .informacoes #discount-desktop{
+        display: inline;
+        font-size: .8em;
+    }
+
+    .informacoes #discount-mobile{
+        display: none;
+    }
+
+    .adicionais{
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .adicionais ul{
+        text-align: start;
+    }
+
+    .adicionais button{
+        font-size: .8em;
+        padding: 0em 2.5em;
+    }
+}
